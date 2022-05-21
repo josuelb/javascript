@@ -15,7 +15,8 @@ console.log(dados);
 //objects
 const user = {
     name: "Josué",
-    age: 18
+    ano: 2004,
+    sexo: 'M'
 };
 console.log(user);
 //any
@@ -37,3 +38,48 @@ var lapis;
     lapis["ja"] = "cabeca";
 })(lapis || (lapis = {}));
 console.log(lapis.ja);
+//literal types
+let l;
+l = 'Olá mundo';
+//Funçôes
+function sans(a, b) {
+    return a + b;
+}
+console.log(sans(12, 13));
+function susNumbers(nums) {
+    return nums.n1 + nums.n2;
+}
+function MultNumbers(nums) {
+    return nums.n1 * nums.n2;
+}
+console.log(susNumbers({ n1: 1, n2: 2 }), MultNumbers({ n1: 3, n2: 6 }));
+//Narrowing
+function dos(info) {
+    if (typeof info == 'number') {
+        console.log(`O número passado é ${info}`);
+        return;
+    }
+    console.log('Não foi passado um número');
+}
+dos(5);
+dos(true);
+//Generics
+function show(ar) {
+    ar.forEach((item) => {
+        console.log(`Item: ${item}`);
+    });
+}
+const a1 = [1, 2, 3];
+const a2 = ['a', 'b', 'c'];
+show(a1);
+show(a2);
+//Class
+class User {
+    constructor(name, role, isApproved) {
+        this.name = name;
+        this.role = role;
+        this.isApproved = isApproved;
+    }
+}
+const zeca = new User('Zeca', "Admin", true);
+console.log(zeca);
